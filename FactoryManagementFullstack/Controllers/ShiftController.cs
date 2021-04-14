@@ -56,7 +56,13 @@ namespace FactoryManagementFullstack.Controllers
         public ActionResult AddShift(EmployeesData shift)
         {
             shiftBL.Add(shift);
-            this.UpdateNumberOfActions();
+            int numOfActions = this.UpdateNumberOfActions();
+
+            if (numOfActions == 0)
+            {
+                return Redirect("/LogIn/LogOut");
+            }
+
             return Redirect("Show");
         }
 
