@@ -1,0 +1,32 @@
+﻿@model FactoryManagementFullstack.Models.user
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogIn</title>
+</head>
+<body>
+    <h1>Log In</h1> <br/>
+    <div>
+        <form action="/LogIn/LogIn" method="post">
+           
+            Username : <input type="text" name="username" /> <br/>
+            Password : <input type="password" name="password" /> <br/>
+            
+            <input type="submit" value="LogIn" />
+
+            @if(ViewBag.ErrorMessage != null)
+            {
+                <div style="color:red">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+        </form>
+    </div>
+</body>
+</html>

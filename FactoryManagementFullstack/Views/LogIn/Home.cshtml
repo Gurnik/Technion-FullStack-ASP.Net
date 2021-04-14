@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome @Session["fullName"]</h2>
+    <h4>Number of Remaining Actions: @Session["numOfActions"]</h4>
+    <div>
+        @Html.ActionLink("Departments", "../Department/Show") <br />
+        @Html.ActionLink("Employees", "../Employee/Show") <br />
+        @Html.ActionLink("Shifts", "../Shift/Show") <br />
+        <br />
+        <br />
+        <span style="background-color:lightgray; padding: 1px 6px 1px 6px">
+            @Html.ActionLink("Log Out", "LogOut")
+        </span>
+    </div>
+</body>
+</html>
